@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+<div class="background">
+<!--Links styles.css to html-->
+<link rel = "stylesheet" href = "gallerystyle.css">
+</head>
+<div class="home">
+    <a href="index.html"><img src="Images/groom_off_log-Photoroom.png" width="250" height="250" class="fade-in"></a>
+    <img src="Images/long_log_grext.png" class="fade-in">
+</div>
+
+<div class="navbar">
+    <b><a href="" class="fade-in">GALLERY</a></b>
+    <a href="about.html" class="fade-in">ABOUT</a>
+    <a href="services.html" class="fade-in">SERVICES</a>
+    <a href="contact.html" class="fade-in">CONTACT</a>
+    <a href="socials.html" class="fade-in">SOCIALS</a>
+  </div>
+
+ <div class="wrapper">
+ <img src="Images/house_1.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_2.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_3.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_4.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_5.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_6.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_7.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_8.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_9.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+ </div>
+
+ <div class="wrapper">
+<img src="Images/house_10.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_11.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_12.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_13.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_14.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_15.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_16.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_17.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+<img src="Images/house_18.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+ </div>
+
+<div class="wrapper">
+  <img src="Images/house_19.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_20.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_21.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_22.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_23.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_24.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_25.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_26.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_27.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+</div>
+
+<div class="wrapper">
+  <img src="Images/house_28.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/house_29.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+  <img src="Images/GROOMS_truck.jpg" class="clickable-image" onclick="openLightbox(this.src)" alt="Thumbnail">
+</div>
+
+
+<div id="lightbox">
+    <span class="arrow left" onclick="prevImage()">&#10094;</span>
+    <img id="lightbox-img" src="" alt="Full Size">
+    <span class="arrow right" onclick="nextImage()">&#10095;</span>
+    <span class="close-btn" onclick="closeLightbox()">&#10006;</span>
+  </div>
+
+  <script>
+  const images = Array.from(document.querySelectorAll('.clickable-image'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        openLightbox(index);
+      });
+    });
+
+    function openLightbox(index) {
+  currentIndex = index;
+  lightboxImg.src = images[currentIndex].src;  // Set image source first
+  lightbox.style.display = 'flex';             // Then show the lightbox
+  document.addEventListener('keydown', handleKey);
+}
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    function handleKey(e) {
+      if (e.key === 'ArrowRight') nextImage();
+      else if (e.key === 'ArrowLeft') prevImage();
+      else if (e.key === 'Escape') closeLightbox();
+    }
+  </script>
+
+
+  <footer class="site-footer">
+  <p class="fade-in">&copy; 2025 Grooms Exteriors. Website created by FVR Studios. All rights reserved.</p>
+</footer>
+</div>
+</html>

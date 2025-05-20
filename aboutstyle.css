@@ -1,0 +1,131 @@
+.background {
+background-color: white;
+}
+
+.home {
+    margin-top: 0,0px;
+    margin: left;
+    display: flex;
+}
+
+.hover-zoom {
+  transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.1);
+}
+
+.navbar {
+      background-color: #333;
+      overflow: hidden;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+      color: rgb(202, 4, 4);
+      text-decoration: none;
+      margin-right: 20px;
+      letter-spacing: 4px;
+      font-family: Arial, sans-serif;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      transform: translateY(-3px) scale(1.05); /* pops up and slightly enlarges */
+      color: white;
+    }
+
+.site-footer {
+  background-color: #f0f0f0;  /* light gray background */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start; /* vertically aligns items at the top */
+  gap: 10px;
+}
+
+.wrapper1 {
+  display: flex;
+  align-items: flex-start; /* vertically aligns items at the top */
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.height {
+  line-height: 0;
+}
+
+.hours {
+  font-size: 18px;
+  text-align: center;
+}
+
+ table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  tr {
+    height: 32px; /* optional */
+  }
+
+  .borderGE {
+    margin: center;
+  }
+
+  .wrapper2 {
+  display: flex;
+  align-items: flex-start; /* vertically aligns items at the top */
+}
+
+  .accordion {
+      cursor: pointer;
+      padding: 1em;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      font-size: 1.1em;
+      background-color: #850101;
+      transition: background-color 0.3s ease;
+      color: white;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .accordion::after {
+      content: '\25BC'; /* Down arrow */
+      float: right;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active::after {
+      transform: rotate(180deg); /* Rotate arrow up */
+    }
+
+    .panel {
+      padding: 0 1em;
+      display: none;
+      background-color: #3b3333;
+      overflow: hidden;
+      color: white;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
